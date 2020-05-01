@@ -11,7 +11,8 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh './run_docker.sh'
+                sh 'docker build . -t capstone'
+                sh 'sudo docker image ls'
             }
         }
         stage('Push to Docker Hub') {
